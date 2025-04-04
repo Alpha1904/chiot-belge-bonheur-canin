@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+        // Couleurs personnalisées pour le site d'éleveur
+        dogPrimary: '#784C33', // Marron chaud
+        dogSecondary: '#B58463', // Beige clair
+        dogTertiary: '#E6D2B7', // Crème
+        dogLight: '#F9F4E8', // Beige très clair
+        dogDark: '#4A2C1A', // Marron foncé
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +91,36 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(10px)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
+        },
+        'bounce-slight': {
+          '0%, 100%': {
+            transform: 'translateY(0)'
+          },
+          '50%': {
+            transform: 'translateY(-5px)'
+          }
+        }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-in': 'fade-in 0.5s ease-out forwards',
+        'bounce-slight': 'bounce-slight 2s infinite ease-in-out'
+			},
+      fontFamily: {
+        'playful': ['"Comic Sans MS"', 'cursive'],
+        'elegant': ['"Playfair Display"', 'serif'],
+      }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
